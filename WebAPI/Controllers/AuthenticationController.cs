@@ -14,11 +14,11 @@ namespace WebAPI.Controllers
     [ApiController, Route("/api/authentication")]
     public class AuthenticationController : ControllerBase
     {
-        private readonly UserManager<IdentityUser> _manager;
+        private readonly UserManager<UserEntity> _manager;
         private readonly JwtSettings _jwtSettings;
         private readonly ILogger _logger;
 
-        public AuthenticationController(UserManager<IdentityUser> manager, ILogger<AuthenticationController> logger, IConfiguration configuration, JwtSettings jwtSettings)
+        public AuthenticationController(UserManager<UserEntity> manager, ILogger<AuthenticationController> logger, IConfiguration configuration, JwtSettings jwtSettings)
         {
             _manager = manager;
             _logger = logger;
@@ -41,7 +41,7 @@ namespace WebAPI.Controllers
             return Unauthorized();
         }
 
-        private string CreateToken(IdentityUser user)
+        private string CreateToken(UserEntity user)
         {
             return new JwtBuilder()
                 .WithAlgorithm(new HMACSHA256Algorithm())

@@ -116,7 +116,7 @@ namespace WebAPI.Configuration
                 var find = await userManager.FindByEmailAsync("karol@wsei.edu.pl");
                 if (find == null)
                 {
-                    UserEntity user = new UserEntity() { Email = "karol@wsei.edu.pl", UserName = "karol" };
+                    UserEntity user = new UserEntity() { Email = "karol@wsei.edu.pl", UserName = "karol5" };
 
                     var saved = await userManager?.CreateAsync(user, "1234ABcd$");
                     userManager.AddToRoleAsync(user, "USER");

@@ -15,7 +15,7 @@ namespace Infrastructure
         {
             base.OnConfiguring(optionsBuilder);
             optionsBuilder.UseSqlServer(
-                "DATA SOURCE=BR-07\\SQLEXPRESS;DATABASE=Lab6Studia;Integrated Security=true;TrustServerCertificate=True");
+                "DATA SOURCE=(localdb)\\MSSQLLocalDB;DATABASE=Lab6StudiaToken;Integrated Security=true;TrustServerCertificate=True");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
